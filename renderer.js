@@ -280,7 +280,7 @@ const connect = async (vid, pid) => {
         updateStatus('data', 'Waiting for data...', 'disconnected');
 
         let lastUpdateTime = 0;
-        const updateInterval = 20;
+        const updateInterval = 1;
 
         currentDevice.on("data", (data) => {
             const now = Date.now();
