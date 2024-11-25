@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joystick Data Chart</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="status-container">
+            <select id="deviceSelect">
+                <option value="">Select a device</option>
+            </select>
+            <div class="status-labels">
+                <div class="status-item">
+                    <span class="status-label">Connection Status:</span>
+                    <span id="connectionStatus" class="status-value">Disconnected</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Selected Device:</span>
+                    <span id="deviceInfo" class="status-value">None</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Data Status:</span>
+                    <span id="dataStatus" class="status-value">No data</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Memory Usage:</span>
+                    <span id="memoryStatus" class="status-value">0 MB</span>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="chart-container">
+                <canvas id="joystickChart"></canvas>
+            </div>
+            <div class="joystick-visual-container">
+                <canvas id="joystickVisual" width="200" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html> 
