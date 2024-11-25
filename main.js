@@ -12,15 +12,23 @@ function createWindow() {
   const win = new BrowserWindow({
     width: windowWidth,
     height: windowHeight,
-    resizable: false,    // Disable window resizing
-    center: true,        // Center the window on the screen
+    resizable: false, 
+    center: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    // Optional: remove the default menu bar
-    // autoHideMenuBar: true,
+    autoHideMenuBar: true,
+    menuBarVisible: false,
   });
+
+  // Prevent the menu from being displayed even with Alt key
+  win.setMenuBarVisibility(false);
+
+  // Remove the menu completely in production
+  if (app.isPackaged) {
+    win.removeMenu();
+  }
 
   win.loadFile("index.html");
 }
